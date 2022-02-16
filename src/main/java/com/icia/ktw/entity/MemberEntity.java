@@ -37,20 +37,20 @@ public class MemberEntity extends BaseEntity {
 
 
 
-    // 멤버와 게시글 연관관계(1:N) : on delete set null을 할 때
-    @OneToMany(mappedBy = "memberEntity", cascade = CascadeType.PERSIST, orphanRemoval = false, fetch = FetchType.LAZY)
-    private List<BoardEntity> boardEntityList = new ArrayList<>();
+//    // 멤버와 게시글 연관관계(1:N) : on delete set null을 할 때
+//    @OneToMany(mappedBy = "memberEntity", cascade = CascadeType.PERSIST, orphanRemoval = false, fetch = FetchType.LAZY)
+//    private List<BoardEntity> boardEntityList = new ArrayList<>();
+//
+//    // 멤버와 댓글 연관관계(1:N) : on delete set null을 할 때
+//    @OneToMany(mappedBy = "memberEntity", cascade = CascadeType.PERSIST, orphanRemoval =false, fetch = FetchType.LAZY)
+//    private List<CommentEntity> commentEntityList = new ArrayList<>();
 
-    // 멤버와 댓글 연관관계(1:N) : on delete set null을 할 때
-    @OneToMany(mappedBy = "memberEntity", cascade = CascadeType.PERSIST, orphanRemoval =false, fetch = FetchType.LAZY)
-    private List<CommentEntity> commentEntityList = new ArrayList<>();
-
-    @PreRemove
-    private void preRemove() {
-        System.out.println("MemberEntity.preRemove");
-        boardEntityList.forEach(board -> board.setMemberEntity(null));
-        commentEntityList.forEach(comment -> comment.setMemberEntity(null));
-    }
+//    @PreRemove
+//    private void preRemove() {
+//        System.out.println("MemberEntity.preRemove");
+//        boardEntityList.forEach(board -> board.setMemberEntity(null));
+//        commentEntityList.forEach(comment -> comment.setMemberEntity(null));
+//    }
 
     public static MemberEntity saveMember(MemberSaveDTO memberSaveDTO) {
         MemberEntity memberEntity = new MemberEntity();
@@ -78,4 +78,4 @@ public class MemberEntity extends BaseEntity {
 
 
 }
-}
+

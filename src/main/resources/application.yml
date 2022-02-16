@@ -17,4 +17,24 @@ spring:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     show-sql: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
+
+
+      mail:
+        host: smtp.gmail.com
+        port: 587
+        username: "rlaxodhks36@naver.com"
+        password: "xodhks7196@"
+        properties:
+          mail:
+            smtp:
+              auth: true
+              starttls:
+                enable: true
+
+                spring.thymeleaf.prefix=classpath:templates/
+                spring.thymeleaf.check-template-location=true
+                spring.thymeleaf.suffix=.html
+                spring.thymeleaf.mode=HTML5
+                spring.thymeleaf.cache=false
+                spring.thymeleaf.order=0

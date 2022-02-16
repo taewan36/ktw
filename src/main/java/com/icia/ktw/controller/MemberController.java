@@ -3,6 +3,7 @@ package com.icia.ktw.controller;
 import com.icia.ktw.dto.MemberDetailDTO;
 import com.icia.ktw.dto.MemberLoginDTO;
 import com.icia.ktw.dto.MemberSaveDTO;
+import com.icia.ktw.dto.MemberUpdateDTO;
 import com.icia.ktw.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -65,7 +66,7 @@ public class MemberController {
             if (memberLoginDTO.getMemberEmail().equals("admin")) {
                 return "member/admin";
             }
-            return "redirect:/board";
+            return "redirect:/member/admin";
         } else {
             bindingResult.reject("loginFail", "이메일 또는 비밀번호가 틀립니다.");
             return "member/login";

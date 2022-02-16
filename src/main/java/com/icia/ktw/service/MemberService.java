@@ -16,6 +16,8 @@ public interface MemberService {
 
     List<MemberDetailDTO> findAll();
 
+    MemberDetailDTO findById(Long memberId);
+
     void deleteById(Long memberId);
 
     Long update(MemberUpdateDTO memberUpdateDTO);

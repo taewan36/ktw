@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>admin.html</title>
+</head>
+<body>
+<h2>admin.html</h2>
+
+로그인ID(email_session): <p th:text="${session['loginEmail']}"></p>
+<br>
+<th:if test="${sessionScope.loginId eq 'admin'}">
+    <a href="/member/findAll">회원목록</a><br><br>
+</th:if>
+<a href="/member/logout">로그아웃</a><br><br><br>
+<a href = "/">홈으로</a><br>
+</body>
+</html>
